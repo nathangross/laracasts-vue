@@ -1,39 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="bulma.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
 </head>
 <body>
-  <div id="vue">
-      <ul>
-        <li v-for="name in names" v-text="name"></li>
-      </ul>
-      <input type="text" name="" id="" v-model="newName">
-      <button @click="addName">Add Name</button>
-  </div>
+    <div id="root" class="container">
+
+        <modal v-if="showModal"></modal>
+        <button>Show Modal</button>
+
+    </div>
+
 </body>
 
-<script>
-
-  new Vue ({
-
-    el: '#vue', 
-    data: {
-      newName: '',
-      names: [ 'Jon', 'Joe', 'Judy', 'Jody']
-    },
-
-    methods: {
-      addName() {
-        this.names.push(this.newName);
-        this.newName = "";
-      }
-    }
-  })
-
-</script>
+<script src="main.js"></script>
 
 </html>
